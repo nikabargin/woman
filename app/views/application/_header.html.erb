@@ -1,0 +1,24 @@
+<nav>
+      <div class="mobile-logo">
+        <%= link_to image_tag("logo.svg"), home_path %>
+      </div>
+      <div class="main-nav">
+        <ul class="nav-part">
+          <li><%= link_to 'главная', home_path %></li>
+          <li><%= link_to 'каталог', products_path %></li>
+          <li><%= link_to 'как заказать', how_path %></li>
+        </ul>
+        <div class="logo nav-part"><%= link_to image_tag("logo.svg"), home_path  %></div>
+        <ul class="nav-part">
+          <li><%= link_to 'о нас', about_path %></li>
+          <li><%= link_to 'гарантии', garanty_path %></li>
+          <li><%= link_to 'контакты', anchor: 'footer' %></li>
+        </ul>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>

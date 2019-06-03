@@ -1,0 +1,169 @@
+<div id="product-page">
+	<div id="carouselExampleIndicators" class="carousel carousel-fade slide images" data-ride="carousel">
+		<div class="thumbs carousel-indicators">
+			<div data-target="#carouselExampleIndicators" class="thumb0 active" data-slide-to="0" data-aos="fade-right">
+					<%= image_tag(@product.thumb(@product.cover)) %>
+			</div>
+			<% @product.images.each_with_index do |image,index| %>
+				<div data-target="#carouselExampleIndicators" class="thumb<%= index + 1 %>" data-slide-to="<%= index + 1 %>" data-aos="fade-right" data-aos-delay="<%= (index+1)*200 %>">
+						<%= image_tag(@product.thumb(image)) %>
+				</div>
+			<% end %>
+		</div>
+		<div class="slides carousel-inner">
+			<div class="slide carousel-item active" data-aos="fade-up">
+				<%= link_to image_tag(@product.slide(@product.cover)), url_for(@product.full(@product.cover)), {"data-fancybox" => "gallery1"} %>
+			</div>
+			<% @product.images.each_with_index do |image,index| %>
+				<div class="slide carousel-item">
+					<%= link_to image_tag(@product.slide(image)), url_for(@product.full(image)), {"data-fancybox" => "gallery1"}  %>
+				</div>
+			<% end %>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			</a>
+		</div>
+		
+	</div>
+	<div class="main-info">
+		<div>
+			<% if user_signed_in? %>
+				<div class="product-settings">
+					<%= link_to 'Изменить', edit_product_path(@product) %>
+					<%= link_to 'Удалить', product_path(@product),
+				              method: :delete,
+				              data: { confirm: 'Ты уверен?' } %>
+			    </div>
+			<% end %>
+			<h1 class="product-title" data-aos="fade-left"><%= @product.name %> <span><%= "#{@product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽</span></h1>
+
+			<div class="product-brief" data-aos="fade-left"  data-aos-delay="400"><%= sanitize @product.brief %></div>
+
+
+
+			<div class="w-action-button" data-aos="fade-left"  data-aos-delay="600">
+				<%=link_to 'Заказать пошив', how_path, class: 'action-button' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ul class="nav extra-info-nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" data-aos="fade-up">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">описание</a>
+  </li>
+  <li class="nav-item" data-aos="fade-up" data-aos-delay="200">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">комплектация</a>
+  </li>
+  <li class="nav-item" data-aos="fade-up" data-aos-delay="400">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">альбом</a>
+  </li>
+  <li class="nav-item" data-aos="fade-up" data-aos-delay="600">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-faq" role="tab" aria-controls="pills-contact" aria-selected="false">частые вопросы</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent" data-aos="fade-up" data-aos-delay="400">
+  <div class="tab-pane fade description show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+  	<p><%= sanitize @product.description %></p>
+  	<div class="big-name-right">
+  		<%= @product.name %>
+  	</div>
+  </div>
+  <div class="tab-pane fade kit" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  	<p><%= sanitize @product.kit %></p>
+  </div>
+  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+  	<% if !@product.videos.empty? %>
+  	<div class="videos">
+	  	<% @urls.each do |url| %>
+	  		<iframe width="100%" src="https://www.youtube.com/embed/<%= url %>?showinfo=0&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  	<% end %>
+	</div>
+  	<% end %>
+  	<div class="gallery">
+  		<% @product.photos.each do |photo| %>
+			<div>
+
+				<%= link_to image_tag(@product.square(photo)), url_for(@product.full(photo)), {"data-fancybox" => "gallery2"} %>
+
+				<% if user_signed_in? %>
+					<%= link_to 'Удалить', delete_image_attachment_product_url(photo.id), method: :delete, class: "trash", remote: true, class: "delete" %> 
+				<% end %>
+
+			</div>	
+		<% end %>
+  	</div>
+  	
+
+	
+	<% if user_signed_in? %>
+		<div class="album-form">
+			<%= form_for @product do |f| %>
+				<%= f.file_field :photos, multiple: true, class: 'inputfile', id: 'photos', "data-multiple-caption" => "{count} выбрано" %>
+				<label for="photos"><span>Добавить фото</span></label>
+				<%= f.submit 'Загрузить в альбом', class: 'album-submit' %>	
+			<% end %>
+		</div>
+	<% end %>
+		
+  </div>
+  <div class="tab-pane fade" id="pills-faq" role="tabpanel" aria-labelledby="pills-contact-tab">
+  	<div class="question">
+	  	<h3>А если обувь не подойдет?</h3>
+	  	<p>Вы всегда можете обменять товар при условии отсутствия следов носки, сохранения комплектации и упаковки. Возможно потребуется повторно снять мерки, чтобы точно подобрать вам размер. При обмене товара стоимость доставки мы берем на себя.</p>
+	</div>
+	<div class="question">
+	  	<h3>Я могу вернуть деньги за товар?</h3>
+	  	<p>Конечно. Если вам не понравился товар, или нет возможности ждать обмен на другой размер, всегда можно оформить возврат. При условии отсутствия следов носки, сохранения комплектации и упаковки. <br><br>
+
+Стоимость товара возвращается в течение 7 рабочих дней (зависит от вашего банка), после получения товара обратно и проверки его состояния и комплектации. Обратите внимание — стоимость доставки не возвращается (как правило это около 300 руб).</p>
+	</div>
+
+	<div class="question">
+	  	<h3>Какая гарантия?</h3>
+	  	<p>Гарантия на обувь составляет год, на сумки и ремни гарантия пожизненная. Срок сервисного обслуживания не ограничен. <br>
+	  	<a href="">Подробнее</a>
+	  	</p>
+	</div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+;( function ( document, window, index )
+{
+	var inputs = document.querySelectorAll( '.inputfile' );
+	Array.prototype.forEach.call( inputs, function( input )
+	{
+		var label	 = input.nextElementSibling,
+			labelVal = label.innerHTML;
+
+		input.addEventListener( 'change', function( e )
+		{
+			var fileName = '';
+			if( this.files && this.files.length > 0 ) {
+				$('.album-submit').addClass('show-submit')
+			} else {
+				$('.album-submit').removeClass('show-submit')
+			}
+			if( this.files && this.files.length > 1 )
+				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+			else
+				fileName = e.target.value.split( '\\' ).pop();
+
+			if( fileName )
+				label.querySelector( 'span' ).innerHTML = fileName;
+			else
+				label.innerHTML = labelVal;
+		});
+
+		// Firefox bug fix
+		input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+		input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+	});
+}( document, window, 0 ));
+</script>

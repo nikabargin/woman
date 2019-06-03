@@ -1,0 +1,64 @@
+<div class="choice-wrapper">
+	<a href="#footer" class="choice order-in-room" data-aos="fade-right">
+		<div class="choice-img-wrapper">
+			<%= image_tag 'showroom-order.png'%>	
+		</div>
+		<h3>Заказ в шоуруме</h3>
+		<p>Только для Москвы и Петербурга. Вы вживую увидите модели, а менеджеры сами снимут мерки. </p>
+	</a>
+	<a href="#online-instruction" class="choice order-online" data-aos="fade-left">
+		<div class="choice-img-wrapper">
+			<%= image_tag 'online-order.png'%>	
+		</div>
+		<h3>Заказ онлайн</h3>
+		<p>Простая инструкция по снятию мерок. Доставка по всему миру удобным для вас способом. </p>
+	</a>
+</div>
+
+<ol class="steps-wrapper" id="online-instruction">
+	<li class="step" data-aos="fade-up">
+		<h3>Выберите модель и комплектующие</h3>
+		<p>Их можно выбрать либо самостоятельно, либо при помощи наших специалистов.</p>
+		<div class="step-links">
+			<%= link_to 'Модели', products_path %>
+			<a href="">Кожи</a>
+		</div>
+	</li>
+	<li class="step" data-aos="fade-up" data-aos="fade-up" data-aos-delay="200">
+		<h3>Свяжитесь с нами</h3>
+		<p>Напишите нам о своём намерении приобрести
+определенную модель с интересующуими
+материалами:</p>
+		<div class="step-links">
+			<a href="">Вконтакте</a>
+			<a href="mailto:woman@outlook.com">woman@outlook.com</a>
+		</div>
+	</li>
+	<li class="step" data-aos="fade-up">
+		<h3>Снимите мерки</h3>
+		<p>Их можно снять либо посетив наш шоу-рум, либо самостоятельно.</p>
+		<div class="step-links">
+			<a href="#footer">Шоурумы</a>
+			<a href="">Как снять мерки?</a>
+		</div>
+	</li>
+	<li class="step" data-aos="fade-up" data-aos-delay="400">
+		<h3>Рассчёт стоимости</h3>
+		<p>Когда все согласовано, вы получаете итоговый документ, в котором описаны все детали заказа. Производится финальный расчет стоимости.</p>
+	</li>
+	<li class="step" data-aos="fade-up">
+		<h3>50% предоплата</h3>
+		<p>Это необходимо для поступления заказа в производство. После предоплаты выдается ваш личный номер заказа, начинается изготовление обуви.</p>
+	</li>
+	<li class="step" data-aos="fade-up" data-aos-delay="400">
+		<h3>45 дней изготовления</h3>
+		<p>Некоторые модели мы делаем быстрее, некоторые дольше. Также срок подрастает, если требуются сильные изменения, чтобы изготовить обувь под именно вашу ногу.</p>
+	</li>
+	<li class="step" data-aos="fade-up">
+		<h3>Получение заказа</h3>
+		<p>Когда заказ готов, вы получаете фото готовой обуви. Далее, после внесения остатка суммы, мы высылаем вам пару в любую точку мира удобным для вас способом.  Разумеется, все чеки и сопроводительные документы Транспортной Компании, которую вы выбираете, с трек-номерами, по которым вы можете отследить местоположение, прилагаются после отправления. </p>
+	</li>
+	<li class="step" data-aos="fade-up" data-aos-delay="400">
+		<%= image_tag 'hug', class: 'hug-img' %>
+	</li>
+</ol>

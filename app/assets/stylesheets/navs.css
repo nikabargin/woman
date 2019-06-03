@@ -1,0 +1,427 @@
+.fade {
+  transition: opacity 0.15s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade {
+    transition: none;
+  }
+}
+
+.fade:not(.show) {
+  opacity: 0;
+}
+
+.extra-info-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 100px 0 20px;
+  list-style: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.nav-link {
+  display: block;
+  padding-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.nav-link:hover, .nav-link:focus {
+  text-decoration: none;
+}
+
+.nav-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: default;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  border-bottom: 2px solid #000;
+}
+
+.nav-fill .nav-item {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.nav-justified .nav-item {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.tab-content {
+    width: 100%;
+}
+
+.description, .question, .kit {
+  width: 100%;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+}
+
+.big-name-right {
+  display: none;  
+}
+
+.kit strong {
+  display: block;
+  margin: 30px 0 5px 0;
+}
+
+.kit strong:first-child {
+  margin-top: 0;
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+.videos iframe {
+  border-radius: 10px;
+}
+
+.gallery {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.gallery img {
+  border-radius: 10px;
+}
+
+.question p {
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.question a {
+  display: inline-block;
+  border-bottom: 3px solid #000;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600; 
+}
+
+@media (min-width: 576px) {
+  .description, .question, .kit {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .kit strong {
+    display: block;
+    font-size: 18px;
+  }
+
+  .question h3 {
+    margin-top: 30px;
+  }
+
+  .question p {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .videos iframe {
+    height: 250px;
+  }
+}
+
+/*********** FOOTER ************/
+
+
+
+
+@media all and (min-width: 768px) {
+  .extra-info-nav {
+    font-size: 18px;
+  }
+
+  .description, .question, .kit {
+    font-size: 18px;
+    line-height: 34px;
+  }
+
+  .kit strong {
+    display: block;
+    font-size: 20px;
+  }
+
+  .question h3 {
+    margin-top: 30px;
+  }
+
+  .question p {
+    font-size: 18px;
+  }
+
+  .videos iframe {
+    height: 200px;
+  }
+
+  .videos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer-controls > .nav {
+    flex-direction: row;
+    font-size: 18px;
+  }
+
+  .footer-tabs .room {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .nav-link {
+    padding-bottom: 15px;
+  }
+
+  .extra-info-nav {
+    width: 67%;
+    margin: 90px 0 20px 0;
+
+  }
+
+  .description, .question, .kit {
+    font-size: 18px;
+    line-height: 36px;
+    width: 60%;
+  }
+
+  .description {
+    position: relative;
+  }
+
+  .big-name-right {
+    display: block;
+    position: absolute;
+    transform: rotate(90deg);
+    font-size: 300px;
+    font-weight: 600;
+    opacity: 0.03;
+    right: -800px;
+    top: 600px;
+  }
+
+  .kit {
+    width: 100%;
+  }
+
+  .kit strong {
+    display: inline-block;
+    width: 350px;
+    font-size: 20px;
+     margin: 20px 0 0 0;
+  }
+
+  .question h3 {
+    margin-top: 50px;
+  }
+
+  .question p {
+    font-size: 18px;
+  }
+
+  .videos iframe {
+    height: 350px;
+  }
+
+  .videos {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media all and (min-width: 1600px) {
+  .nav-link {
+    padding-bottom: 20px;
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    border-bottom: 3px solid #000;
+  }
+  
+  .nav-link {
+    padding-bottom: 15px;
+  }
+
+  .extra-info-nav {
+    font-size: 20px;
+    width: 67%;
+  }
+
+  .description, .question, .kit {
+    font-size: 20px;
+    line-height: 36px;
+    width: 60%;
+  }
+
+  .kit {
+    width: 100%;
+  }
+
+  .kit strong {
+    display: inline-block;
+    font-size: 22px;
+    margin: 25px 0 0 0;
+  }
+
+  .question h3 {
+    margin-top: 100px;
+  }
+
+  .question p {
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .videos iframe {
+    height: 350px;
+  }
+
+  .videos {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .question a {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    font-weight: 600; 
+  }
+
+}
+
+@media all and (min-width: 2400px) {
+  .extra-info-nav {
+    font-size: 26px;
+  }
+
+  .nav-link {
+    padding-bottom: 25px;
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    border-bottom: 3px solid #000;
+  }
+  
+  .nav-link {
+    padding-bottom: 15px;
+  }
+
+  .description, .question, .kit {
+    font-size: 24px;
+    line-height: 48px;
+    width: 50%;
+  }
+
+  .kit {
+    width: 100%;
+  }
+
+  .kit strong {
+    font-size: 26px;
+    margin: 25px 0 0 0;
+  }
+
+  .question h3 {
+    margin-top: 100px;
+  }
+
+  .question p {
+    font-size: 24px;
+    line-height: 44px;
+  }
+
+  .videos iframe {
+    height: 500px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .question a {
+    margin-top: 40px;
+    padding-bottom: 10px;
+    font-weight: 600; 
+  }
+
+}

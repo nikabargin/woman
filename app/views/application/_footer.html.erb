@@ -1,0 +1,65 @@
+<footer id="footer">
+<h1 class="footer-title">Шоурумы</h1>
+
+<p class="footer-info">Перед посещением шоу-рума рекомендуем записаться,
+чтобы вам не пришлось долго ждать своей очереди.</p>
+
+<div class="footer-nav">
+  <div class="footer-controls">
+    <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Москва</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><span>Санкт-</span>Петербург</a>
+      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Другой город</a>
+    </div>
+  </div>
+  <div class="footer-tabs">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      	<div class="room">
+	      	<div class="yandex-map">
+	      		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1834.974158531252!2d37.58496047420383!3d55.73927669229707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54ba542d7cf89%3A0x5d3f0288831c43c0!2z0KHQvNC-0LvQtdC90YHQutC40Lkg0LEt0YAsIDIsINCc0L7RgdC60LLQsCwgMTE5MTIx!5e0!3m2!1sru!2sru!4v1543235960680" frameborder="0" style="border:0" allowfullscreen></iframe>
+	      	</div>
+	      	<div class="room-info">
+	      		<p>Ежедневно с 12:00 до 21:00 <br>Смоленский бульвар 2<br> м. Парк Культуры <br><a class="phone" href="tel:+79257019809">+7-925-701-98-09</a></p>
+	      	<div class="w-action-button">
+		      	<a href="https://n92314.yclients.com/company:105869/idx:0/master?o=m240667&lang=" class="action action-button room-button" onclick="gtag_report_conversion3()" target="_blank">Записаться</a></div>
+		    </div>
+      	</div>
+  	  </div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+	      	<div class="room">
+		      	<div class="yandex-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1631.9236665573537!2d30.328823437122914!3d59.956001768719204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631692abe3615%3A0x526ad83274638cae!2z0YPQuy4g0JrRg9C50LHRi9GI0LXQstCwLCAxOSwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5NzA0Ng!5e0!3m2!1sru!2sru!4v1533722965270" frameborder="0" style="border:0;" allowfullscreen></iframe></div>
+		      	<div class="room-info">
+		      		<p>Ежедневно с 12:00 до 21:00 <br>ул. Куйбышева 19<br> м. Горьковская <br><a class="phone" href="tel:+79643292116">+7-964-329-21-16</a></p>
+		      		<div class="w-action-button">
+						<a href="https://n92314.yclients.com/company:83392/idx:0/master?o=&lang=" class="action action-button room-button" onclick="gtag_report_conversion2()" target="_blank">Записаться</a>
+					</div>
+				</div>
+			</div>
+		</div>
+      <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+      	<div class="room">
+      		<p class="footer-online-info">Заказ можно сделать онлайн с доставкой в любую точку мира. Для этого ознакомьтесь с простой инструкцией: <br><br>	
+  			<%= link_to 'Как заказать онлайн', how_path(anchor: "online-instruction"), class: 'action-button' %>
+      		</p>
+      	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="extra-footer">
+	<div class="buisness-info">ИП Юдин Игнат Васильевич <br>ОГРНИП 317784700076123 <br>ИНН 780248040707 <br> Россия, Санкт-Петербург, пос. Песочный, Ул. Пионерская 22А</div>
+	<div class="extra-links">
+		<div class="social-links">
+			<a href="https://vk.com/bikerbootsrussia" target="_blank">Вконтакте</a>
+			<a href="https://www.instagram.com/bbrcustomfootwear/" target="_blank">Instagram</a>
+			<a href="https://fb.me/bbrfactory/" target="_blank">Facebook</a>
+			<% if user_signed_in? %>
+		    <%= link_to('Выйти', destroy_user_session_path, method: :delete, class: 'logout-button') %>        
+		    <% end %>
+		</div>
+	</div>
+</div>
+
+</footer>

@@ -1,0 +1,17 @@
+<div class="height100">
+	<p>Просто перетаскивай карточки. Верхняя левая будет первой и так далее.</p>
+	<section id="products-change" data-url="<%= sort_products_path %>">
+		<% @products.each do |product| %>
+			<%= link_to product_path(product), style: "display: block", id: dom_id(product) do %>
+				<div class="product-card-change">
+					<div class="product-thumb-change">
+						<%= image_tag(product.thumb(product.cover)) %>
+					</div>
+				</div>
+				<h3 class="product-name-change">
+					<%= product.name %>
+				</h3>
+			<% end %>                       
+		<% end %>
+	</section>
+</div>

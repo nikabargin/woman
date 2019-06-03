@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    models:
+      product: 'Обувь'
+    attributes:
+      product:
+        name: 'Название'
+        brief: 'Краткое описание'
+        price: 'Цена'
+        description: 'Описание'
+        kit: 'Комплектация'
+        cover: 'Обложка'
+        images: 'Дополнительные фото'
+        photos: 'Альбом'
+        videos: 'Видео'
+    errors:
+      messages:
+        blank: '- поле должно быть заполнено'

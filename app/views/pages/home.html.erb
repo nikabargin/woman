@@ -1,0 +1,98 @@
+	<div class="special-nav hide">
+      <div class="mobile-logo">
+        <%= link_to image_tag("logo.svg"), home_path  %>
+      </div>
+      <div class="main-nav">
+        <ul class="nav-part">
+          <li><%= link_to 'главная', home_path %></li>
+          <li><%= link_to 'каталог', products_path %></li>
+          <li><%= link_to 'как заказать', how_path %></li>
+        </ul>
+        <div class="logo nav-part"><%= link_to image_tag("logo.svg"), products_path  %></div>
+        <ul class="nav-part">
+          <li><%= link_to 'о нас', about_path %></li>
+          <li><%= link_to 'гарантии', garanty_path %></li>
+          <li><%= link_to 'контакты', anchor: 'footer' %></li>
+        </ul>
+      </div>
+
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+	<header class="v-header v-container">
+		<div class="fullscreen-video-wrap">
+			<%= video_tag("intro", autoplay: true, loop: true, muted: true)  %>
+		</div>
+		<div class="header-overlay"></div>
+		<div class="header-content">
+			<div class="big-logo" data-aos="fade-in">
+				<%= image_tag("wlogo.svg")  %>
+			</div>
+			<p data-aos="fade-in" data-aos-delay="500">индивидуальный пошив женской обуви</p>
+		</div>
+	</header>
+	<section class="scrolldown" data-aos="fade-up" data-aos-offset="-200" data-aos-duration="3000">
+		<div><small>крути вниз</small></div>
+		<div class="line"></div>
+	</section>
+	<div class="main-wrapper">
+	<section class="features-wrapper">
+		<h1 data-aos="fade-in">По вашей ноге</h1>
+		<p data-aos="fade-in">Пошив женской обуви из натуральных материалов по вашим меркам</p>
+		<div class="features">
+			<div class="feature" data-aos="fade-up">
+				<%= image_tag 'f-size.png' %>
+				<h3>33-45 размер</h3>
+			</div>
+			<div class="feature"  data-aos="fade-up" data-aos-delay="200">
+				<%= image_tag 'f-garanty.png' %>
+				<h3>Гарантия 1 год</h3>
+			</div>
+			<div class="feature"  data-aos="fade-up" data-aos-delay="400">
+				<%= image_tag 'f-arms.png' %>
+				<h3>Ручная работа</h3>
+			</div>
+			<div class="feature"  data-aos="fade-up" data-aos-delay="600">
+				<%= image_tag 'f-leather.png' %>
+				<h3>200 кож на выбор</h3>
+			</div>
+		</div>
+	</section>
+	<section id="products">
+		<% @products.each do |product| %>
+			<%= link_to product_path(product), style: "display: block" do %>
+				<div data-aos="fade-up" class="product-card">
+					<div class="product-thumb">
+						<%= image_tag(product.card(product.cover)) %>
+					</div>
+					<h3 class="product-name">
+						<%= product.name %>
+					</h3>
+					<div class="product-price">
+						<small>
+							<%= "#{product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+						</small>
+					</div>
+				</div>
+			<% end %>                       
+		<% end %>
+	</section>
+	<section class="link-to-catalog" data-aos="fade-in">
+		<small>
+			<%= link_to 'перейти в каталог', products_path %>
+		</small>
+	</section>
+	</div>
+
+	<script>
+	$(window).scroll(function(){
+	  if($(this).scrollTop() >= 400){           
+	      $('.special-nav').removeClass('hide');
+	  } else {
+	    $('.special-nav').addClass("hide"); 
+	  } 
+	});
+    </script>

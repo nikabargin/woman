@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WOMAN</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+
+  <body>
+    <% if !current_page?(home_path) && !current_page?(root_path) %>
+      <%= render 'header' %>
+      <div class="main-wrapper">
+        <%= yield %>
+      </div>
+        <%= render 'footer' unless @disable_footer %>  
+    <% else %>
+        <%= yield %>
+        <%= render 'footer' %>
+    <% end %>
+    <script>
+
+      // Navigation Slider
+
+      function navSlide() {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.main-nav');
+        const navLinks = document.querySelectorAll('.nav-part > li');
+
+        burger.addEventListener('click', () => {
+          nav.classList.toggle('nav-active');
+
+          navLinks.forEach((link, index) => {
+            if(link.style.animation) {
+              link.style.animation = '';
+            } else {
+              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }            
+          });
+          burger.classList.toggle('toggle');
+        });  
+      };
+
+      navSlide();
+
+
+
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        disable: 'mobile',
+        duration: 1000
+      });
+    </script>
+  </body>
+</html>

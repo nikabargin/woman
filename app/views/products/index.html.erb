@@ -1,0 +1,28 @@
+<% if user_signed_in? %>
+
+<div class="admin-buttons">
+	<%= link_to 'Добавить модель', new_product_path, class: 'admin-button' %>
+	<%= link_to 'Перемешать', changeorder_path, class: 'admin-button position-button' %>
+</div>
+
+<% end %>
+
+
+	<section id="products">
+		<% @products.each do |product| %>
+			<%= link_to product_path(product), style: "display: block" do %>
+				<div class="product-card" data-aos="fade-up">
+					<div class="product-thumb">
+						<%= image_tag(product.card(product.cover)) %>
+					</div>
+					<h3 class="product-name">
+						<%= product.name %>
+					</h3>
+					<div class="product-price"><small>
+						<%= "#{product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+					</small>
+					</div>
+				</div>
+			<% end %>                       
+		<% end %>
+	</section>
