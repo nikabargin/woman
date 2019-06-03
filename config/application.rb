@@ -18,6 +18,5 @@ module Woman
     config.i18n.default_locale = :ru
     
     config.assets.enabled = true
-    config.assets.paths << "#{Rails.root}/app/assets/videos"
   end
 end
