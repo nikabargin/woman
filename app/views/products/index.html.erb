@@ -13,7 +13,7 @@
 			<%= link_to product_path(product), style: "display: block" do %>
 				<div class="product-card" data-aos="fade-up">
 					<div class="product-thumb">
-						<%= image_tag(product.card(product.cover)) %>
+						<%= image_tag(product.card) %>
 					</div>
 					<h3 class="product-name">
 						<%= product.name %>

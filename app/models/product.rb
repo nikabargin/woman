@@ -12,8 +12,8 @@ class Product < ApplicationRecord
 	validate :image_type
 	validate :photo_type
 
-	def card input
-		return input.variant(resize: "900x900").processed
+	def card
+		return self.cover.variant(resize: "900x900").processed
 	end
 
 	def thumb input

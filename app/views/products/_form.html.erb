@@ -64,7 +64,7 @@
 		<label for="cover"><span>Добавить</span></label>
 		<% if !@product.new_record? %>  
 			<div class="edit-cover-wrapper">                      
-		   		<%= image_tag(@product.card(@product.cover)) %>
+		   		<%= image_tag(@product.card) %>
 		   		текущая
 		   	</div>
 		<% end %>
