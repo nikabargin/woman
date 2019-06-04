@@ -10,8 +10,8 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="slides carousel-inner">
-			<div class="slide carousel-item active" data-aos="fade-up">
+		<div class="slides carousel-inner" data-aos="fade-up">
+			<div class="slide carousel-item active">
 				<%= link_to image_tag(@product.slide(@product.cover)), url_for(@product.full(@product.cover)), {"data-fancybox" => "gallery1"} %>
 			</div>
 			<% @product.images.each_with_index do |image,index| %>
