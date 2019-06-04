@@ -59,7 +59,10 @@
 
 
    <div class="form-block">
-		<%= f.label :cover %> 
+		<%= f.label :cover do %>
+		Обложка <br>
+		<small>(вертикальная 4:5)</small>
+		<% end %> 
 		<%= f.file_field :cover, class: 'inputfile', id: 'cover' %>
 		<label for="cover"><span>Добавить</span></label>
 		<% if !@product.new_record? %>  
@@ -75,7 +78,7 @@
 <div class="form-block">
 	<%= f.label :images do %>
 	Доп. изображения <br>
-	<small>(2 шт.)</small>
+	<small>(2 шт. вертикальные 4:5)</small>
 	<% end %>
 	<%= f.file_field :images, multiple: true, class: 'inputfile extraimages', id: 'images', "data-multiple-caption" => "{count} выбрано" %>
 	<label for="images"><span>Добавить</span></label>
