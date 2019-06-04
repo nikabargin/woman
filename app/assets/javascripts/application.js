@@ -16,6 +16,8 @@
 //= require jquery3
 //= require jquery-ui/widget
 //= require jquery-ui/sortable
+//= require popper
+//= require bootstrap-sprockets
 //= require trix
 //= require_tree .
 
