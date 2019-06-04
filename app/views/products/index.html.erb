@@ -8,10 +8,10 @@
 <% end %>
 
 
-	<section id="products">
+	<section id="products" data-aos="fade-up">
 		<% @products.each do |product| %>
 			<%= link_to product_path(product), style: "display: block" do %>
-				<div class="product-card" data-aos="fade-up">
+				<div class="product-card">
 					<div class="product-thumb">
 						<%= image_tag(product.card) %>
 					</div>
