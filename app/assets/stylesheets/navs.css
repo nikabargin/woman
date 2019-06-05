@@ -223,6 +223,7 @@
     right: -800px;
     top: 600px;
     z-index: -20;
+    letter-spacing: 5px;
   }
 
   .kit {
