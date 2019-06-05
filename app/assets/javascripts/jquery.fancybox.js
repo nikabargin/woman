@@ -34,7 +34,7 @@
     var defaults = {
 
         // Enable infinite gallery navigation
-        loop : false,
+        loop : true,
 
         // Space around image, ignored if zoomed-in or viewport smaller than 800px
         margin : [44, 0],
