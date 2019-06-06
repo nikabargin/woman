@@ -396,7 +396,6 @@ nav, .special-nav {
 @media (min-width: 576px) and (max-width: 767px) {
 	nav, .special-nav {
 		font-size: 0.9em;
-		min-height: 80px;
 	}
 
 	.burger {
@@ -1152,15 +1151,22 @@ nav, .special-nav {
 }
 
 .step {
-	margin: 0 0 60px 0;
-}
-
-.step {
+	margin-bottom: 100px;
 	text-align: center;
 }
 
+.step-img {
+	margin-bottom: 10px;
+}
+
+.step-img img {
+	max-width: 200px;
+}
+
 .step p {
+	margin: 20px 0 30px 0;
 	font-size: 15px;
+	text-align: center;
 }
 
 .step-links a {
@@ -1168,6 +1174,11 @@ nav, .special-nav {
 	border-bottom: 2px solid #000;
 	padding-bottom: 10px;
 	font-weight: 600; 
+}
+
+.step-social-links a:first-child {
+	margin-right: 20px;
+	margin-bottom: 20px;
 }
 
 @media (min-width: 576px) {
@@ -1191,6 +1202,18 @@ nav, .special-nav {
 	.step p {
 		font-size: 16px;
 	}
+
+	.step-img img {
+		max-width: 270px;
+	}
+
+	.step-social-links a {
+		margin-right: 20px;
+	}
+
+	.step-social-links a:last-child {
+		margin-right: 0;
+	}
 }
 
 @media (min-width: 768px) {
@@ -1213,14 +1236,6 @@ nav, .special-nav {
 
 	.step p {
 		font-size: 18px;
-	}
-
-	.step:last-child {
-		text-align: center;
-	}
-
-	.hug-img {
-		width: 300px;	
 	}
 }
 
@@ -1272,18 +1287,36 @@ nav, .special-nav {
 	}
 
 	.steps-wrapper {
-		grid-template-columns: 1fr 1fr;
 		padding-top: 100px;
-		grid-gap: 100px;
+	}
+
+	.step {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		margin-bottom: 0;
+		min-height: 80vh;
+		text-align: left;
+	}
+
+	.step-info {
+		max-width: 600px;
+	}
+
+	.step-img {
+		margin-bottom: 0px;
+		text-align: center;
+	}
+
+	.step-img img {
+		max-width: 420px;
 	}
 
 	.step p {
 		font-size: 20px;
 		line-height: 36px;
-	}
-
-	.hug-img {
-		width: 400px;	
+		margin: 30px 0 40px 0;
+		text-align: left;
 	}
 }
 
@@ -1307,24 +1340,13 @@ nav, .special-nav {
 		line-height: 36px;
 	}
 
-	.steps-wrapper {
-		grid-template-columns: 1fr 1fr 1fr;
-		padding-top: 100px;
-		grid-gap: 70px;
-	}
-
 	.step p {
-		font-size: 18px;
-	}
-
-	.step-links a {
 		font-size: 20px;
-		margin-right: 20px;
-		border-bottom: 3px solid #000;
+		line-height: 40px;
 	}
 }
 
-@media (min-width: 2400px) {
+@media (min-width: 2100px) {
 	.choice-wrapper	{
 		margin-top: -100px;
 	}
@@ -1350,20 +1372,22 @@ nav, .special-nav {
 		width: 700px;
 	}
 
-	.steps-wrapper {
-		grid-template-columns: 1fr 1fr 1fr;
-		padding-top: 100px;
-		grid-gap: 70px;
-	}
-
 	.step p {
 		font-size: 24px;
 		line-height: 44px;
+		margin: 40px 0 50px 0;
+	}
+
+	.step-img img {
+		max-width: 650px;
+	}
+
+	.step-info {
+		max-width: 700px;
 	}
 
 	.step-links a {
 		font-size: 22px;
-		margin-right: 20px;
 		border-bottom: 3px solid #000;
 	}
 }
