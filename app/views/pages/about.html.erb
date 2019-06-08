@@ -1,55 +1,121 @@
+<% title "О нас" %>
+
 
 <div class="about-block">
-	<p>История WOMAN берёт своё начало в BBR — самой крупной компании по индивидуальному пошиву обуви в России. В далеком 1989 году Василий Юдин открыл небольшую обувную мастерскую, которая позже стала оптовым производством...</p><a href="https://www.bbrfactory.com/history" target="_blank">Читать о BBR</a>
-</div>
-
-<div class="about-block">
-	<p>К созданию отдельного бренда, нас подтолкнули сами женщины, недовольные женской обувью в магазинах. Ситуация почти всегда одинаковая: “Мне нравятся вот эти, но они не по размеру, другие подходят хорошо, но они мне не нравятся внешне”.</p>
-	<p>Решение основной проблемы достаточное простое: индивидуальный пошив. С ног снимаются мерки (они даже могут быть разными) и уже по ним делается обувь, учитывая все индивидуальные особенности.</p>
-</div>
-
-<div class="about-block">
-	<p>В отличие от магазинов, в WOMAN можно практически всё. Более 200 натуральных кож и других материалов для каждой модели. Цвет ниток, шнурки, фурнитура на выбор. У каждой модели можно выбрать подкладку: натуральная кожа, шерстяная байка, натуральный лен, или натуральный мех.</p>
-	<p>Также есть возможность ручного окрашивания пары, создание неповторимых фактур, глянцевая полировка. Огромный простор возможностей, а также опытные мастера, которые всегда готовы помочь определиться с выбором.</p>
-</div>
-
-<div class="about-block">
-	<h2>Почему никто не делает обувь для женщин на заказ?</h2>
-	<div class="poins-wrapper">
-		<div>
-			<div class="point-img">+5%</div>
-			<p>Сложнее и затратнее в производстве</p>
-			<a href="">Почему?</a>
-		</div>
-		<div>
-			<div class="point-img">+5%</div>
-			<p>На оформление заказа нужно больше времени</p>
-			<a href="">Почему?</a>
-		</div>
-		<div>
-			<div class="point-img">+5%</div>
-			<p>Мужчинам проще делать мужскую обувь</p>
-			<a href="">Почему?</a>
+	<div class="about-img showroom-img" data-aos="fade-right">
+		<%= image_tag 'showroom.jpg' %>
+	</div>
+	<div class="about-info" data-aos="fade-left">
+		<h3>Как всё начиналось</h3>
+		<p>История WOMAN берёт своё начало в BBR — самой крупной компании по индивидуальному пошиву обуви в России. В далеком 1989 году Василий Юдин открыл небольшую обувную мастерскую, которая позже стала оптовым производством...</p>
+		<div class="about-button">
+			<a href="https://www.bbrfactory.com/history" target="_blank">Читать о BBR</a>
 		</div>
 	</div>
 </div>
 
 <div class="about-block">
-	<h2>Женская обувь должна украшать ногу.</h2>
-	<p>Каждая модель задумана и разработана под определенный стиль и условия носки, имеет философию отличную от другой, а не просто занимает место в каталоге.</p>
+	<div class="about-info" data-aos="fade-right">
+		<p>К созданию отдельного бренда, нас подтолкнули сами женщины, недовольные женской обувью в магазинах. Ситуация почти всегда одинаковая: “Мне нравятся вот эти, но они не по размеру, другие подходят хорошо, но они мне не нравятся внешне”.</p>
+		<p>Решение основной проблемы достаточное простое: индивидуальный пошив. С ног снимаются мерки (они даже могут быть разными) и уже по ним делается обувь, учитывая все индивидуальные особенности.</p>
+	</div>
+	<div class="about-img" data-aos="fade-left">
+		<%= image_tag 'ind1.png' %>
+	</div>
+</div>
+
+<div class="about-points">
+	<h3 data-aos="fade-up">Почему никто не делает обувь для женщин на заказ?</h3>
+	<p class="about-points-info" data-aos="fade-up">*Факты ниже основаны на данных BBR*:</p>
+	<div class="points-wrapper">
+		<div data-aos="fade-right" data-aos="fade-up">
+			<div class="point-img"><%= image_tag 'man.png' %></div>
+			<p>Мужчинам проще делать мужскую обувь</p>
+		</div>
+		<div data-aos="fade-up" data-aos-delay='200'>
+			<div class="point-img"><%= image_tag 'clock.png' %></div>
+			<p>На оформление заказа нужно больше времени</p>
+		</div>
+		<div data-aos="fade-up" data-aos-delay='400'>
+			<div class="point-img"><%= image_tag 'hard.png' %></div>
+			<p>Сложнее и затратнее в производстве</p>
+		</div>
+	</div>
 </div>
 
 <div class="about-block">
-	<h2>Обувь должна быть удобной и натуральной.</h2>
-	<p>Мы производим обувь не для того, чтобы продать ее на экспорт в другую страну. Мы производим обувь для своих жен, дочерей, мам и подруг. Знаем как сделать хорошо и на совесть, и делаем.</p>
+	<div class="about-img" data-aos="fade-right">
+		<div id="carouselIndicators2" class="carousel carousel-fade slide" data-ride="carousel">
+			<div class="slides carousel-inner">
+				<div class="slide carousel-item active">
+					<%= image_tag 'leather1.jpg' %>
+				</div>
+				<div class="slide carousel-item">
+					<%= image_tag 'leather2.jpg' %>
+				</div>
+				<div class="slide carousel-item">
+					<%= image_tag 'leather3.jpg' %>
+				</div>
+				<a class="carousel-control-prev" href="#carouselIndicators2" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselIndicators2" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="about-info" data-aos="fade-left">
+		<p>В отличие от магазинов, в WOMAN можно практически всё. Более 200 натуральных кож и других материалов. Цвет ниток, шнурки, фурнитура на выбор. У каждой модели можно выбрать подкладку: натуральная кожа, шерстяная байка, натуральный лен, или натуральный мех.</p>
+		<p>Также есть возможность ручного окрашивания пары, создание неповторимых фактур, глянцевая полировка и много чего ещё.</p>
+	</div>
+</div>
+
+<div class="about-block models-block">
+	<div class="about-img models-img">
+		<div id="carouselIndicators3" class="carousel carousel-fade slide" data-ride="carousel">
+			<div class="slides carousel-inner" data-aos="fade-up">
+				<div class="slide carousel-item active">
+					<%= image_tag 'model1.jpg' %>
+				</div>
+				<div class="slide carousel-item">
+					<%= image_tag 'model2.jpg' %>
+				</div>
+				<div class="slide carousel-item">
+					<%= image_tag 'model3.jpg' %>
+				</div>
+				<a class="carousel-control-prev" href="#carouselIndicators3" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselIndicators3" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="about-info" data-aos="fade-right">
+		<h3>Женская обувь должна украшать</h3>
+		<p>Каждая модель задумана и разработана под определенный стиль и условия носки, имеет философию отличную от другой, а не просто занимает место в каталоге.</p>
+	</div>
 </div>
 
 <div class="about-block">
-	<h2>Работа с клиентом не заканчивается.</h2>
-	<p>Мы должны убедиться что обувь вам подходит. Можем доработать пару, пока вы ее не начали носить - посадка по ноге, растяжка, размягчение.</p>
+	<div class="about-img" data-aos="fade-right">
+		<%= image_tag 'comfort.jpg' %>
+	</div>
+	<div class="about-info" data-aos="fade-left">
+		<h3>Обувь должна быть удобной</h3>
+		<p>Мы должны убедиться что обувь вам подходит. Можем доработать пару, пока вы ее не начали носить - посадка по ноге, растяжка, размягчение.</p>
+	</div>
 </div>
 
 <div class="about-block">
-	<p>В 2015 году была придумана концепция бренда, 4 года потребовалось, чтобы создать образцы, отработать их, определиться с материалами. И вот наконец, мы представляем вам WOMAN.</p>
-	<p>Спасибо, что вы есть. Вы прекрасны.</p>
+	<div class="about-img final-img" data-aos="fade-left">
+		<%= image_tag 'team.jpg' %>
+	</div>
+	<div class="about-info" data-aos="fade-right">
+		<p>В 2015 году была придумана концепция бренда, 4 года потребовалось, чтобы создать образцы, отработать их, определиться с материалами. И вот наконец, мы представляем вам WOMAN.</p>
+		<p>Мы производим обувь не для продажи на экспорт в другую страну. Мы делаем это для своих жен, дочерей, мам и подруг. Знаем как сделать хорошо и на совесть. </p>
+		<p>Спасибо, что вы есть. Вы прекрасны.</p>
+	</div>
 </div>
