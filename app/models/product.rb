@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 	validate :photo_type
 
 	def card
-		return self.cover.variant(combine_options: {resize: "900", quality: "80"}).processed
+		return self.cover.variant(combine_options: {resize: "900", quality: "60"}).processed
 	end
 
 	def thumb input
