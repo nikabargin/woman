@@ -17,19 +17,19 @@ class Product < ApplicationRecord
 	end
 
 	def thumb input
-		return input.variant(combine_options: {resize: "400", gravity: "Center", crop: "4:5" }).processed
+		return input.variant(combine_options: {resize: "400", quality: "80", gravity: "Center", crop: "4:5" }).processed
 	end
 
 	def slide input
-		return input.variant(combine_options: {resize: "800", gravity: "Center", crop: "4:5" }).processed
+		return input.variant(combine_options: {resize: "800", quality: "80", gravity: "Center", crop: "4:5" }).processed
 	end
 
 	def square input
-		return input.variant(combine_options: {resize: "750", gravity: "Center", crop: "1:1" }).processed
+		return input.variant(combine_options: {resize: "750", quality: "80", gravity: "Center", crop: "1:1" }).processed
 	end
 
 	def full input
-		return input.variant(resize: "1500").processed
+		return input.variant(combine_options: {resize: "1500", quality: "80"}).processed
 	end
 
 	private
