@@ -13,23 +13,23 @@ class Product < ApplicationRecord
 	validate :photo_type
 
 	def card
-		return self.cover.variant(combine_options: {resize: "900", quality: "60"}).processed
+		return self.cover.variant(combine_options: {resize: "900", quality: "70"}).processed
 	end
 
 	def thumb input
-		return input.variant(combine_options: {resize: "400", quality: "70", gravity: "Center", crop: "4:5" }).processed
+		return input.variant(combine_options: {resize: "400", quality: "60", gravity: "Center", crop: "4:5" }).processed
 	end
 
 	def slide input
-		return input.variant(combine_options: {resize: "800", quality: "80", gravity: "Center", crop: "4:5" }).processed
+		return input.variant(combine_options: {resize: "800", quality: "70", gravity: "Center", crop: "4:5" }).processed
 	end
 
 	def square input
-		return input.variant(combine_options: {resize: "750", quality: "70", gravity: "Center", crop: "1:1" }).processed
+		return input.variant(combine_options: {resize: "750", quality: "60", gravity: "Center", crop: "1:1" }).processed
 	end
 
 	def full input
-		return input.variant(combine_options: {resize: "1500", quality: "80"}).processed
+		return input.variant(combine_options: {resize: "1500", quality: "75"}).processed
 	end
 
 	private
