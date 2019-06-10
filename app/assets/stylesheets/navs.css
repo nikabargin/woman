@@ -328,7 +328,7 @@
 
 }
 
-@media all and (min-width: 2400px) {
+@media all and (min-width: 2000px) {
   .extra-info-nav {
     font-size: 26px;
   }
