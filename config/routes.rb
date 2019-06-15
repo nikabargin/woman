@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'admin', to: 'devise/sessions#new'
 end
 
-  resources :products do
+  resources :products, :path => 'catalog' do
   	collection do
   		patch :sort
   	end
