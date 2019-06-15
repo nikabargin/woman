@@ -35,6 +35,9 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'acts_as_list'
+gem 'friendly_id'
+gem 'babosa'
+gem 'sitemap_generator'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

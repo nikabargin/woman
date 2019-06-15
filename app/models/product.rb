@@ -12,6 +12,17 @@ class Product < ApplicationRecord
 	validate :image_type
 	validate :photo_type
 
+	extend FriendlyId
+  	friendly_id :name, use: :slugged
+
+  	def normalize_friendly_id(text)
+		text.to_slug.normalize! :transliterations => [:russian, :latin]
+	end
+
+	def should_generate_new_friendly_id?
+	  slug.blank? || name_changed?
+	end
+
 	def card
 		return self.cover.variant(combine_options: {resize: "900", quality: "70"}).processed
 	end
