@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>WOMAN - <%= content_for?(:title) ? yield(:title) : 'Пошив женской обуви по вашим меркам' %></title>
+    <title>WOMAN — <%= content_for?(:title) ? yield(:title) : 'Пошив женской обуви по вашим меркам' %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name='description'
+      content="<%= content_for?(:meta_description) ? yield(:meta_description) : '' %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="8100fd7600412ec9" />
     <meta name="google-site-verification" content="tWTv1CphOMQT9Baf9VX-D3iu1b7LQ9qqsqflGVBG6Lw" />
