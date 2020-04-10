@@ -78,11 +78,21 @@
 					<h3 class="product-name">
 						<%= product.name %>
 					</h3>
-					<div class="product-price">
-						<small>
+					<% if product.new_price %>
+					<div class="price-wrapper product-price">
+						<span class="price-new">
+							<%= "#{product.new_price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+						</span>
+						<span class="price-line">
 							<%= "#{product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
-						</small>
+						</span>
 					</div>
+					<% else %>
+						<div class="product-price"><small>
+						<%= "#{product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+						</small>
+						</div>
+					<% end %>
 				</div>
 			<% end %>                       
 		<% end %>
