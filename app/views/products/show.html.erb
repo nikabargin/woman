@@ -42,7 +42,23 @@
 				              data: { confirm: 'Ты уверен?' } %>
 			    </div>
 			<% end %>
-			<h1 class="product-title" data-aos="fade-left"><%= @product.name %> <span><%= "#{@product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽</span></h1>
+			<h1 class="product-title" data-aos="fade-left">
+				<%= @product.name %>
+				<% if @product.new_price %>
+				<div class="price-wrapper">
+					<span class="price-new">
+						<%= "#{@product.new_price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+					</span>
+					<span class="price-line">
+						<%= "#{@product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+					</span>
+				</div>
+				<% else %>
+					<span>
+						<%= "#{@product.price}".reverse.gsub(/.{3}(?=.)/, '\0 ').reverse %> ₽
+					</span>
+				<% end %>	
+			</h1>
 
 			<div class="product-brief" data-aos="fade-left"  data-aos-delay="400"><%= sanitize @product.brief %></div>
 

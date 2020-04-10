@@ -525,9 +525,23 @@ nav, .special-nav {
 }
 
 .header-content p {
+	font-size: 12px;
+	text-transform: uppercase;
 	text-align: center;
-	margin-top: 40px;
-	letter-spacing: 1.5px;
+	letter-spacing: 0.5px !important;
+	font-weight: 800;
+	width: 270px;
+	margin: 30px auto;
+	line-height: 25px;
+}
+
+@media(min-width: 1200px) {
+	.header-content p {
+		margin: 50px auto;
+		font-size: 16px;
+		width: unset;
+		letter-spacing: 1.5px !important;
+	}
 }
 
 .scrolldown {
@@ -537,8 +551,7 @@ nav, .special-nav {
 	align-items: center;
 	flex-direction: column;
 	margin-top: -120px;
-	color: #fff;		
-	text-transform: uppercase;
+	color: #fff;
 }
 
 .line {
@@ -659,7 +672,7 @@ nav, .special-nav {
 
 .features-wrapper {
 	text-align: center;
-	min-height: 100vh;
+	min-height: 80vh;
 }
 
 .features-wrapper h1 {
@@ -673,10 +686,7 @@ nav, .special-nav {
 .features {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-.feature {
-	margin-bottom: 40px;
+	grid-gap: 40px;
 }
 
 .feature h3 {
@@ -724,7 +734,7 @@ nav, .special-nav {
 @media (min-width: 1200px) {
 	.features-wrapper {
 		text-align: center;
-		min-height: 80vh;
+		min-height: 70vh;
 	}
 
 	.features-wrapper p {
@@ -2380,4 +2390,54 @@ input[type='submit'] {
 	}
 
 
+}
+
+.price-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.price-wrapper span {
+	
+	display: inline-block;
+}
+
+.price-line {
+	text-decoration: line-through;
+	margin-left: 15px;
+}
+
+#banner {
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 200px;
+	margin-bottom: 30px;
+	text-align: center;
+	background: rgb(142,201,241);
+	background: -webkit-linear-gradient(310deg, rgba(142,201,241,1) 0%, rgba(195,225,241,1) 100%);
+	background: -o-linear-gradient(310deg, rgba(142,201,241,1) 0%, rgba(195,225,241,1) 100%);
+	background: linear-gradient(40deg, rgba(142,201,241,1) 0%, rgba(195,225,241,1) 100%);
+	color: #fff;
+}
+
+#banner h1 {
+	font-size: 48px;
+	margin-bottom: 10px;
+}
+
+#banner p {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 24px;
+}
+
+@media(min-width: 1200px) {
+	#banner {
+		margin-top: 30px;	
+	}
+	
 }

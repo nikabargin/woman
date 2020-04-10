@@ -39,6 +39,14 @@
 </div>
 
 <div class="form-block">
+<%= f.label :new_price do %>
+Новая цена <br>
+<small>(без пробелов)</small>
+<% end %>
+<%= f.text_field :new_price %>
+</div>
+
+<div class="form-block">
 <%= f.label :description %>
 	<div class="description-field">
 		<%= f.hidden_field :description, id: :product_description %>
