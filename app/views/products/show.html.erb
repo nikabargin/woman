@@ -6,7 +6,7 @@
 	<div id="carouselExampleIndicators" class="carousel carousel-fade slide images" data-ride="carousel">
 		<div class="thumbs carousel-indicators">
 			<div data-target="#carouselExampleIndicators" class="thumb0 active" data-slide-to="0" data-aos="fade-right">
-					<%= image_tag(@product.thumb(@product.cover)) %>
+					<%= image_tag(@product.thumb(@product.cover)) if product.cover.attached? %>
 			</div>
 			<% @product.images.each_with_index do |image,index| %>
 				<div data-target="#carouselExampleIndicators" class="thumb<%= index + 1 %>" data-slide-to="<%= index + 1 %>" data-aos="fade-right" data-aos-delay="<%= (index+1)*200 %>">
