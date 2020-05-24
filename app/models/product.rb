@@ -24,7 +24,7 @@ class Product < ApplicationRecord
 	end
 
 	def card
-		return self.cover.variant(resize:'900x900', quality: '70').processed
+		
 	end
 
 	def thumb input
