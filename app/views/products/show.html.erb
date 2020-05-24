@@ -16,7 +16,9 @@
 		</div>
 		<div class="slides carousel-inner" data-aos="fade-up">
 			<div class="slide carousel-item active">
+				<% if product.cover.attached? %>
 				<%= link_to image_tag(@product.slide(@product.cover)), url_for(@product.full(@product.cover)), {"data-fancybox" => "gallery1"} %>
+				<% end %>
 			</div>
 			<% @product.images.each_with_index do |image,index| %>
 				<div class="slide carousel-item">
