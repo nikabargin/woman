@@ -73,7 +73,7 @@
 			<%= link_to product_path(product), style: "display: block" do %>
 				<div class="product-card">
 					<div class="product-thumb">
-						<%= image_tag(product.card) %>
+						<%= image_tag(product.card) if product.cover.attached? %>
 					</div>
 					<h3 class="product-name">
 						<%= product.name %>

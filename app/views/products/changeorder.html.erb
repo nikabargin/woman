@@ -6,7 +6,7 @@
 			<%= link_to product_path(product), style: "display: block", id: dom_id(product) do %>
 				<div class="product-card-change">
 					<div class="product-thumb-change">
-						
+						<%= image_tag(product.thumb(product.cover)) if product.cover.attached? %>
 					</div>
 				</div>
 				<h3 class="product-name-change">
