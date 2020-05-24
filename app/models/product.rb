@@ -23,10 +23,6 @@ class Product < ApplicationRecord
 	  slug.blank? || name_changed?
 	end
 
-	def card
-		
-	end
-
 	def thumb input
 		return input.variant(combine_options: {resize: "400", quality: "60", gravity: "Center", crop: "4:5" }).processed
 	end
